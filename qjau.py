@@ -41,7 +41,7 @@ parser.add_argument("-c", "--command", help="Command that you wish to run", narg
 args = parser.parse_args()
 
 if args.priority == None:
-    print "Error, priority argument required"
+    print ("Error, priority argument required")
     parser.print_help()
     sys.exit(-1)
 
@@ -50,17 +50,17 @@ if args.verbosity == None:
 
 
 if args.command == None:
-    print "Error, command argument required"
+    print ("Error, command argument required")
     parser.print_help()
     sys.exit(-1)
 
 if args.window == None:
-    print "Error, window size argument required"
+    print ("Error, window size argument required")
     parser.print_help()
     sys.exit(-1)
 
 if os.geteuid() != 0:
-    print "Error, set_sock_priority must be run as root."
+    print ("Error, set_sock_priority must be run as root.")
     sys.exit(-1)
 
 new_env = os.environ
